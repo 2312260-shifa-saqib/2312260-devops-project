@@ -37,12 +37,36 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/2312241-devops-project:latest
 
+            # stop old containers
             docker stop myapp || true
             docker rm myapp || true
 
+            docker stop devops-db || true
+            docker rm devops-db || true
+
+            # create network (IMPORTANT)
+            docker network create app-network || true
+
+            # run postgres
+            docker run -d \
+              --name devops-db \
+              --network app-network \
+              -e POSTGRES_DB=appdb \
+              -e POSTGRES_USER=devops \
+              -e POSTGRES_PASSWORD=secret123 \
+              -v postgres_data:/var/lib/postgresql/data \
+              postgres:15
+
+            # run app
             docker run -d \
               --name myapp \
+              --network app-network \
               -p 8000:8000 \
+              -e DB_HOST=devops-db \
+              -e DB_NAME=appdb \
+              -e DB_USER=devops \
+              -e DB_PASSWORD=secret123 \
               ${{ secrets.DOCKER_USERNAME }}/2312241-devops-project:latest
+
+            echo "Deployment completed"
