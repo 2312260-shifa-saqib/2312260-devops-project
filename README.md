@@ -1,12 +1,12 @@
-# 2312241-devops-project
+# 2312260-devops-project
 
 ## Student Details
 
-Name: Mahad Baloch  
-Registration Number: 2312241  
-GitHub Username: mahadb4  
-GitHub Account Email: mahadbaloch000@gmail.com  
-Git Author Email for this project: mahadbaloch000+2312241@gmail.com
+Name: Shifa Saqib  
+Registration Number: 2312260  
+GitHub Username: 2312260-shifa-saqib  
+GitHub Account Email: 2312260.shifasaqib@gmail.com  
+Git Author Email for this project: 2312260.shifasaqib@gmail.com
 
 ## Project Title
 
@@ -52,7 +52,7 @@ Expected response:
 {
   "status": "ok",
   "db": "connected",
-  "student": "2312241"
+  "student": "2312260"
 }
 ```
 
@@ -64,9 +64,9 @@ Example JSON body:
 
 ```json
 {
-  "name": "Mahad Baloch",
-  "reg_no": "2312241",
-  "email": "mahadbaloch000@gmail.com",
+  "name": "Shifa Saqib",
+  "reg_no": "2312260",
+  "email": "2312260.shifasaqib@gmail.com",
   "course": "DevOps Fundamentals"
 }
 ```
@@ -80,7 +80,7 @@ Returns all student records from PostgreSQL.
 Example:
 
 ```text
-/students/2312241
+/students/2312260
 ```
 
 Returns one student record or 404 if not found.
@@ -88,7 +88,7 @@ Returns one student record or 404 if not found.
 ## Project Structure
 
 ```text
-2312241-devops-project/
+2312260-devops-project/
 ├── app/
 │   ├── __init__.py
 │   ├── main.py
@@ -192,8 +192,8 @@ pytest app/tests/ -v
 Set your Git username and project author email:
 
 ```bash
-git config user.name "Mahad Baloch"
-git config user.email "mahadbaloch000+2312241@gmail.com"
+git config user.name "Shifa Saqib"
+git config user.email "2312260.shifasaqib@gmail.com"
 ```
 
 Start repository and push to GitHub:
@@ -202,7 +202,7 @@ Start repository and push to GitHub:
 git init
 git add .
 git commit -m 'feat: add FastAPI PostgreSQL DevOps project'
-git remote add origin https://github.com/mahadb4/2312241-devops-project.git
+git remote add origin https://github.com/2312260-shifa-saqib/2312260-devops-project.git
 git branch -M main
 git push -u origin main
 ```
@@ -239,7 +239,7 @@ Add these secrets in GitHub:
 Repository -> Settings -> Secrets and variables -> Actions -> New repository secret
 
 ```text
-DOCKER_USERNAME = mahadb4
+DOCKER_USERNAME = 2312260-shifa-saqib
 DOCKER_PASSWORD = your Docker Hub password or access token
 EC2_HOST = your EC2 public IP address
 EC2_SSH_KEY = full contents of your .pem key file
@@ -314,10 +314,10 @@ docker logs myapp
 
 Show these in the 5-minute demo:
 
-1. GitHub repository is public and named `2312241-devops-project`.
+1. GitHub repository is public and named `2312260-devops-project`.
 2. GitHub Actions pipeline is green.
 3. EC2 URL opens the FastAPI application.
-4. `/health` returns registration number `2312241`.
+4. `/health` returns registration number `2312260`.
 5. Open `/docs` and POST a student record.
 6. Open GET `/students` and show the record is saved.
 7. Restart or redeploy and show the data is still present.

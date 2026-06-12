@@ -23,7 +23,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/2312241-devops-project:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/2312260-devops-project:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -67,6 +67,6 @@ jobs:
               -e DB_NAME=appdb \
               -e DB_USER=devops \
               -e DB_PASSWORD=secret123 \
-              ${{ secrets.DOCKER_USERNAME }}/2312241-devops-project:latest
+              ${{ secrets.DOCKER_USERNAME }}/2312260-devops-project:latest
 
             echo "Deployment completed"

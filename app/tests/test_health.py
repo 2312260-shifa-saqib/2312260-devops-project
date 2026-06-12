@@ -5,5 +5,5 @@ def test_health_endpoint(client):
     assert response.json() == {
         "status": "ok",
         "db": "connected",
-        "student": "2312241",
+        "student": "2312260",
     }

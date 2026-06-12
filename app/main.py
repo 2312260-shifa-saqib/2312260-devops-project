@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from app.database import Base, engine, get_db, wait_for_database
 from app.models import Student
 
-STUDENT_REG_NO = "2312241"
+STUDENT_REG_NO = "2312260"
 
 
 @asynccontextmanager
@@ -19,7 +19,7 @@ async def lifespan(application: FastAPI):
     yield
 
 
-app = FastAPI(title="2312241 DevOps Project", lifespan=lifespan)
+app = FastAPI(title="2312260 DevOps Project", lifespan=lifespan)
 
 
 class StudentCreate(BaseModel):
@@ -42,7 +42,7 @@ def student_to_dict(student):
 @app.get("/")
 def root():
     return {
-        "message": "Mahad Baloch DevOps microservice is running",
+        "message": "Shifa Saqib DevOps microservice is running",
         "student": STUDENT_REG_NO,
     }
 
