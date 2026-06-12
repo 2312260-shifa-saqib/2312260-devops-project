@@ -14,7 +14,7 @@ services:
       retries: 5
 
   web:
-    image: ${DOCKER_USERNAME}/2312241-devops-project:latest
+    image: ${DOCKER_USERNAME}/2312260-devops-project:latest
     ports:
       - "8000:8000"
     environment:
